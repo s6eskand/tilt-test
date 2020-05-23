@@ -9,3 +9,5 @@ Tilt Test uses the RIOT Games API to get match history for your past 5 games and
 TL;DR A web app I built to play around with the league of legends API 
 
 #saveleague
+
+If you feel you could add some cool features to the website, or want to help take it further, just open a PR or create an issue and I'll look into it :)))
