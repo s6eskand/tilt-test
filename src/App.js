@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Components/Header';
-import Summoner from "./Components/Summoner";
+import Header from './Sections/Header';
+import Summoner from "./Sections/Summoner";
 import './App.css';
 
 function App() {
