@@ -89,6 +89,36 @@ a {
   cursor: pointer;
 }
 
+.info {
+  padding-top: 200px;
+  padding-bottom: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.25s ease-in;
+}
+
+.info h3 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.summoner-info {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.rank {
+  width: 30%;
+}
+
+.most-played {
+  padding-left: 100px;
+}
+
 @media screen and (max-width: 1000px) {
   .header-text {
     font-size: 16px;
@@ -114,7 +144,7 @@ a {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .header-text {
     font-size: 12px;
   }
