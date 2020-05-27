@@ -19,6 +19,7 @@ class Summoner extends React.Component {
             rankedInfo: {},
             matches: [],
             opacity: '0',
+            display: 'none'
         }
     }
 
@@ -90,6 +91,7 @@ class Summoner extends React.Component {
 
         this.setState({
             opacity: '1',
+            display: ''
         });
 
         console.log(this.state)
@@ -97,24 +99,27 @@ class Summoner extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="about-text">
-                    <h3>Just input your Summoner Name and get match statistics for your last 5 games.
-                    <br/>
-                    <br/>
-                        From there you’ll get advice on whether that next game is a great idea or if you should give the ranked climb a little break.
-                    </h3>
-                </div>
-                <div className="submit" style={{zIndex: 20}}>
-                    <input
-                        onChange={this.handleSummonerChange.bind(this)}
-                        value={this.state.summonerNameInput}
-                        className="submit-input"
-                        type="text"
-                        placeholder="Your Summoner Name Here..."/>
-                    <Link to="summonerInfo"><button onClick={this.handleSubmit.bind(this)} className="submit-btn" >Tilt Test Me</button></Link>
+            <div>
+                <div className="container">
+                    <div className="about-text">
+                        <h3>Just input your Summoner Name and get match statistics for your last 5 games.
+                        <br/>
+                        <br/>
+                            From there you’ll get advice on whether that next game is a great idea or if you should give the ranked climb a little break.
+                        </h3>
+                    </div>
+                    <div className="submit" style={{zIndex: 20}}>
+                        <input
+                            onChange={this.handleSummonerChange.bind(this)}
+                            value={this.state.summonerNameInput}
+                            className="submit-input"
+                            type="text"
+                            placeholder="Your Summoner Name Here..."/>
+                        <Link to="summonerInfo"><button onClick={this.handleSubmit.bind(this)} className="submit-btn" >Tilt Test Me</button></Link>
+                    </div>
                 </div>
                 <SummonerInfo
+                    style={{display: this.state.display}}
                     id="summonerInfo"
                     opacity={this.state.opacity}
                     name={this.state.summonerName}
