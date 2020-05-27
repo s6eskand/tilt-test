@@ -2,7 +2,7 @@ import React from 'react';
 import SummonerInfo from "./SummonerInfo";
 import { Link } from 'react-scroll';
 
-const API_KEY = 'RGAPI-f790033b-ef0e-4995-a4a0-593af70c745c';
+const API_KEY = 'RGAPI-2796cb25-cce9-4a87-8671-419897d8a8e2';
 
 class Summoner extends React.Component {
     constructor(props) {
@@ -65,7 +65,14 @@ class Summoner extends React.Component {
         await fetch(`https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${this.state.summonerId}?api_key=${API_KEY}`)
             .then(res => res.json())
             .then(res => {
-                this.setState({rankedInfo: res[0]})
+                let rankedInfo = [];
+                if (res[0].queueType === "RANKED_SOLO_5x5") {
+                    rankedInfo = res[0];
+                }
+                else {
+                    rankedInfo = res[1];
+                }
+                this.setState({rankedInfo})
             })
             .catch(err => console.log(err));
 
