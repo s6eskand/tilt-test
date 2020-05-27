@@ -119,6 +119,12 @@ a {
   padding-left: 100px;
 }
 
+.champion-image {
+  border-radius: 50%;
+  width: 20%;
+  position: absolute;
+}
+
 @media screen and (max-width: 1000px) {
   .header-text {
     font-size: 16px;
