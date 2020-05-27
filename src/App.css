@@ -120,9 +120,7 @@ a {
 }
 
 .champion-image {
-  border-radius: 50%;
-  width: 20%;
-  position: absolute;
+  position: absolute
 }
 
 @media screen and (max-width: 1000px) {
